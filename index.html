@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Menu Screen</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+    <div class="carousel-container">
+        <button class="arrow left" onclick="prevSlide()">
+            <img src="left-arrow-icon.png" alt="Left Arrow">
+        </button>
+        <div class="carousel">
+            <div class="slide" id="slide1"><img src="Bilder/Cartridge_empty.png" alt="Anime 1"></div>
+            <div class="slide" id="slide2"><img src="Bilder/Cartridge_full.png" alt="Anime 2"></div>
+            <div class="slide" id="slide3"><img src="Bilder/Cartridge_empty.png" alt="Anime 3"></div>
+        </div>
+        <button class="arrow right" onclick="nextSlide()">
+            <img src="right-arrow-icon.png" alt="Right Arrow">
+        </button>
+    </div>
+
+    <div class="content">
+        <div class="item">
+            <div class="model-container">
+                <model-viewer src="Bilder/one_piece_logo.glb" alt="3D Model" auto-rotate disable-controls disable-zoom interaction-prompt="none" field-of-view="45deg" exposure="1" onclick="toggleTextBox(this)"></model-viewer>
+                <div class="text-box">
+                    <p>One Piece is a story about Monkey D. Luffy, a young man whose body gains the properties of rubber after unintentionally eating a Devil Fruit. With his diverse crew of pirates, named the Straw Hat Pirates, Luffy explores the Grand Line in search of the world's ultimate treasure known as "One Piece" in order to become the next Pirate King. One Piece is a story about Monkey D. Luffy, a young man whose body gains the properties of rubber after unintentionally eating a Devil Fruit. With his diverse crew of pirates, named the Straw Hat Pirates, Luffy explores the Grand Line in search of the world's ultimate treasure known as "One Piece" in order to become the next Pirate King.One Piece is a story about Monkey D. Luffy, a young man whose body gains the properties of rubber after unintentionally eating a Devil Fruit. With his diverse crew of pirates, named the Straw Hat Pirates, Luffy explores the Grand Line in search of the world's ultimate treasure known as "One Piece" in order to become the next Pirate King.One Piece is a story about Monkey D. Luffy, a young man whose body gains the properties of rubber after unintentionally eating a Devil Fruit. With his diverse crew of pirates, named the Straw Hat Pirates, Luffy explores the Grand Line in search of the world's ultimate treasure known as "One Piece" in order to become the next Pirate King.One Piece is a story about Monkey D. Luffy, a young man whose body gains the properties of rubber after unintentionally eating a Devil Fruit. With his diverse crew of pirates, named the Straw Hat Pirates, Luffy explores the Grand Line in search of the world's ultimate treasure known as "One Piece" in order to become the next Pirate King.</p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="model-container">
+                <model-viewer src="Bilder/one_piece_logo.glb" alt="3D Model" auto-rotate disable-controls disable-zoom interaction-prompt="none" field-of-view="45deg" exposure="1" onclick="toggleTextBox(this)"></model-viewer>
+                <div class="text-box">
+                    <p>Hunter X Hunter is a story about a young boy named Gon Freecss who discovers that his father, who he was told was dead, is actually a world-renowned Hunter, a licensed profession for those who specialize in fantastic pursuits such as locating rare or unidentified animal species, treasure hunting, surveying unexplored enclaves, or hunting down lawless individuals.</p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="model-container">
+                <model-viewer src="Bilder/one_piece_logo.glb" alt="3D Model" auto-rotate disable-controls disable-zoom interaction-prompt="none" field-of-view="45deg" exposure="1" onclick="toggleTextBox(this)"></model-viewer>
+                <div class="text-box">
+                    <p>Studio Ghibli is a Japanese animation film studio based in Koganei, Tokyo. The studio is best known for its animated feature films, and has also produced several short films, television commercials, and one television film. Notable works include My Neighbor Totoro, Spirited Away, and Princess Mononoke.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <img src="https://via.placeholder.com/100x40" alt="Furtwangen">
+        <img src="https://via.placeholder.com/100x40" alt="HFU">
+    </div>
+
+    <script src="scripts.js"></script>
+    <script src="cherryblossom.js"></script>
+    <script>
+        function toggleTextBox(modelViewer) {
+            const textBox = modelViewer.closest('.model-container').querySelector('.text-box');
+            if (textBox.style.display === 'none' || textBox.style.display === '') {
+                textBox.style.display = 'block';
+            } else {
+                textBox.style.display = 'none';
+            }
+        }
+
+        function adjustViewport() {
+            document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+        }
+
+        window.addEventListener('resize', adjustViewport);
+        adjustViewport();
+    </script>
+</body>
+</html>
