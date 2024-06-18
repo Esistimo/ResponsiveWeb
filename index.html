@@ -8,12 +8,12 @@
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
-    <div class="carousel-container">
+    <div class="carousel-container fullscreen">
         <button class="arrow left" onclick="prevSlide()">
             <img src="left-arrow-icon.png" alt="Left Arrow">
         </button>
         <div class="carousel">
-            <div class="slide" id="slide1"><img src="Bilder/Cartridge_full.png" alt="Anime 1"></div>
+            <div class="slide" id="slide1" onclick="revealContent()"><img src="Bilder/Cartridge_full.png" alt="Anime 1"></div>
             <div class="slide" id="slide2"><img src="Bilder/Cartridge_empty.png" alt="Anime 2"></div>
             <div class="slide" id="slide3"><img src="Bilder/Cartridge_empty.png" alt="Anime 3"></div>
         </div>
@@ -26,7 +26,7 @@
         <div class="item">
             <div class="model-container">
                 <model-viewer src="Bilder/one_piece_logo.glb" alt="3D Model" auto-rotate disable-controls disable-zoom interaction-prompt="none" field-of-view="45deg" exposure="1" onclick="toggleTextBox(this)"></model-viewer>
-                <div class="text-box">
+                <div class="text-box hidden">
                     <p>One Piece is a story about Monkey D. Luffy, a young man whose body gains the properties of rubber after unintentionally eating a Devil Fruit. With his diverse crew of pirates, named the Straw Hat Pirates, Luffy explores the Grand Line in search of the world's ultimate treasure known as "One Piece" in order to become the next Pirate King.</p>
                 </div>
             </div>
@@ -34,7 +34,7 @@
         <div class="item">
             <div class="model-container">
                 <model-viewer src="Bilder/one_piece_logo.glb" alt="3D Model" auto-rotate disable-controls disable-zoom interaction-prompt="none" field-of-view="45deg" exposure="1" onclick="toggleTextBox(this)"></model-viewer>
-                <div class="text-box">
+                <div class="text-box hidden">
                     <p>Hunter X Hunter is a story about a young boy named Gon Freecss who discovers that his father, who he was told was dead, is actually a world-renowned Hunter, a licensed profession for those who specialize in fantastic pursuits such as locating rare or unidentified animal species, treasure hunting, surveying unexplored enclaves, or hunting down lawless individuals.</p>
                 </div>
             </div>
@@ -42,7 +42,7 @@
         <div class="item">
             <div class="model-container">
                 <model-viewer src="Bilder/one_piece_logo.glb" alt="3D Model" auto-rotate disable-controls disable-zoom interaction-prompt="none" field-of-view="45deg" exposure="1" onclick="toggleTextBox(this)"></model-viewer>
-                <div class="text-box">
+                <div class="text-box hidden">
                     <p>Studio Ghibli is a Japanese animation film studio based in Koganei, Tokyo. The studio is best known for its animated feature films, and has also produced several short films, television commercials, and one television film. Notable works include My Neighbor Totoro, Spirited Away, and Princess Mononoke.</p>
                 </div>
             </div>
@@ -56,33 +56,5 @@
 
     <script src="scripts.js"></script>
     <script src="cherryblossom.js"></script>
-    <script>
-        function toggleTextBox(modelViewer) {
-            const textBox = modelViewer.closest('.model-container').querySelector('.text-box');
-            if (textBox.style.display === 'none' || textBox.style.display === '') {
-                textBox.style.display = 'block';
-            } else {
-                textBox.style.display = 'none';
-            }
-        }
-
-        function adjustViewport() {
-            document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
-        }
-
-        function revealContentOnScroll() {
-            const hiddenElements = document.querySelectorAll('.hidden');
-            hiddenElements.forEach(el => {
-                if (el.getBoundingClientRect().top < window.innerHeight) {
-                    el.classList.remove('hidden');
-                    el.classList.add('visible');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', revealContentOnScroll);
-        window.addEventListener('resize', adjustViewport);
-        document.addEventListener('DOMContentLoaded', adjustViewport);
-    </script>
 </body>
 </html>
