@@ -107,6 +107,14 @@ body {
     visibility: visible;
 }
 
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
 .content {
     display: flex;
     flex-direction: column; /* Stack items vertically */

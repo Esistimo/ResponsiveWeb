@@ -1,9 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-    if (window.innerWidth > 768) {
-        createCherryBlossoms();
-    }
-});
-
 function createCherryBlossoms() {
     const numBlossoms = 150;
     for (let i = 0; i < numBlossoms; i++) {
@@ -39,3 +33,9 @@ function animateBlossom(blossom) {
         iterations: Infinity
     });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.innerWidth > 768) {
+        createCherryBlossoms();
+    }
+});
