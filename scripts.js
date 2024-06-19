@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Ensure initial state
     document.querySelector('.content').classList.add('hidden');
     document.querySelector('.footer').classList.add('hidden');
-    document.querySelectorAll('.text-box').forEach(textBox => textBox.classList.add('hidden'));
+    document.querySelectorAll('.textbox').forEach(textBox => textBox.classList.add('hidden'));
     document.querySelector('.carousel-container').classList.remove('move-up');
     document.body.style.overflow = 'hidden'; // Prevent scrolling
 });
@@ -44,7 +44,7 @@ function revealContent() {
 document.getElementById('slide1').addEventListener('click', revealContent);
 
 function toggleTextBox(modelViewer) {
-    const textBox = modelViewer.closest('.model-container').querySelector('.text-box');
+    const textBox = modelViewer.closest('.model-container').querySelector('.textbox');
     if (textBox.classList.contains('hidden')) {
         textBox.classList.remove('hidden');
     } else {
